@@ -1,6 +1,5 @@
 .nav-item {
     margin:9px;
-     border:  5px solid red;
 }
 .nav-item{
     color:blue;
@@ -13,9 +12,68 @@
 }
 body {
     background-color: #08d695; 
+    border: 5px dashed white;
+    padding-left:330px;
+    padding-top: 50px;
+    padding-bottom: 80px;
 }
 .nav {
   
   margin: 10;
   width: 720px;
 }
+
+.material-icons{
+    color:white;
+    font-weight: bold;
+    font-size: 20px;
+    border-style: double;
+    border-width: 3px;
+    border-color: white;
+}
+
+h3 {
+    text-shadow: 2px 2px 5px white;
+}
+
+h2 {
+     border: 2px solid white;
+    border-radius: 5px;
+    font-family: 'Kavivanar';
+    font-weight: bold;
+}
+
+#Or{
+    width: 200px;
+    border-style: double;
+    border-width: 5px;
+    border-color: blue;
+}
+
+#Dep {
+    border-style:  double;
+    border-width: 5px;
+    border-color: blue;
+}
+
+#FT {
+    border-style:  double;
+    border-width: 5px;
+    border-color: blue;
+    
+}
+
+#GT {
+    width: 500px;
+    border-style:  double;
+    border-width: 5px;
+    border-color: blue;
+}
+
+#IV{
+    width: 400px;
+    border-style:  double;
+    border-width: 5px;
+    border-color: blue;
+}
+

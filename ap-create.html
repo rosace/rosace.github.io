@@ -3,6 +3,7 @@
     <head>
         <title> </title>
          <link href="stylesheet.css" rel="stylesheet"/>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.min.js"></script>
     </head>
     <body>
  <i class="material-icons">menu</i>
@@ -12,10 +13,175 @@
           <tr>
             <td><a href="index.html">Home</a></td>
             <td><a href="ap-explore.html">Explore</a></td>
-            <td><a href="ap-create.html">create</a></td>
+            <td><a href="ap-create.html">Create</a></td>
             <td><a href="strangths.html">Strangths</a></td>
             <td><a href= "college.html">College</a></td>
+            <td><a href= "research.html">Research</a></td>
           </tr>
         </table>
+        
+        
+        <h4>Algorithm</h4>
+        <p> function drawBall() {  </p>
+    <p>noStroke();</p>
+    <p>fill(25, 200, 500);</p>
+    <p>ellipse(ballX, 200, 20, 20);</p>
+    <p>ellipse(200, ballY, 20, 20);</p>
+    <p>ellipse(ballX, ballY, 20, 20);
+}</p>
+
+<p>The purpose of this block of code is to draw the three
+blue balls that show up on the screen. When this code runs
+correctly, it draws three balls the same size as each other.
+The algorithm is able to achieve this result by using 
+ellipse to position and control the size of the three balls.
+It also uses fill to add color to all three of the balls. 
+If this program did not include this algorithm, the blue 
+background would not be able to change to different colors. 
+This algorithm works with the move function to make sure
+the three balls are able to move around in the screen.</p>
+
+
+
+<h4>Abstraction</h4>
+
+<p> function draw() {</p>
+<p> background(BG); </p>
+<p> Background(); </p>
+<p> stroke(0); </p>
+<p> line(width / 2, 0, width / 2, height); </p>
+<p> line(0, height / 2, width, height / 2); </p>
+<p> drawBall(); </p>
+<p>move(); </p>
+<p> CheckBounderies();} </p>
+
+<p>An example of an abstraction in my program is the
+Draw(); function. This simplifies my program by calling
+all the previous steps which include drawing the balls,
+moving, and checking the boundaries into one place. 
+This way I have all the parts that make the program run
+in one single are reducing the code into simple steps.
+I created this function to avoid having a messy code 
+and be able to single out any bugs because it is easier
+to tell if one step is not working and were I can find 
+and change the code without breaking it. If this 
+abstraction was not present, then there would be no
+balls and they would not be able to move because even
+though I have the code for each of the steps without
+calling them in this draw function they would not 
+appear on the screen.
+</p>
+        
+        <style>
+        canvas {
+            border: 4px solid black;
+     }
+        </style>
+        
+        <script>
+            
+            let ballX;
+let ballY;
+let speedX;
+let speedY;
+let BG;
+
+function setup()
+{
+    createCanvas(400, 400);
+    ballX = width / 2;
+    ballY = height / 2;
+    speedX = random(-5, 5);
+    speedY = random(-5, 5);
+    BG = color(0,20,200);
+}
+
+function draw()
+{
+     background (BG);
+     Background();
+     
+    stroke(0);
+    line(width / 2, 0, width / 2, height);
+    line(0, height / 2, width, height / 2);
+    drawBall();
+    move();
+    CheckBounderies();
+}
+    
+   function drawBall()
+   {
+    noStroke();
+    fill(25, 200, 500);
+    ellipse(ballX, 200, 20, 20);
+    ellipse(200,ballY, 20,20);
+    ellipse(ballX,ballY,20,20);
+   }
+
+    
+    function move()
+    {
+    ballX = ballX + speedX;
+    ballY = ballY + speedY;
+}
+
+function CheckBounderies ()
+{
+  
+     if(ballY > height) 
+    {
+       speedY = random(-2,2);
+}
+    
+     if(ballY <= 0) 
+    {
+     speedY = random (-2,2);
+}
+    
+  
+     if(ballX > width) 
+    {
+        speedX= -2;
+}
+
+   
+     if(ballX <= 0) 
+  {
+    speedX= 3 ;
+  }
+}
+
+
+function Background ()
+{
+  if (ballY > 400)
+  {
+     BG = color(100,10,200);
+    
+ }
+ 
+ if(ballY < 0)
+ {
+  BG = color(252, 0, 16);   
+ }
+
+ 
+if (ballX > width)
+{
+ BG =  color(0, 200, 100);   
+}
+
+
+if(ballX <0)
+{
+ BG = color(0, 255, 233);   
+}
+
+
+}
+
+        </script>
+        
+        
     </body>
 </html>
